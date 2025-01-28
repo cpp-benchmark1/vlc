@@ -39,7 +39,7 @@ jobs:
       shell: bash
       run: |
         sudo apt-get install git g++ make libtool automake autopoint pkg-config flex bison lua5.2 autotools-dev autoconf
-        sudo sed -Ei 's/^Types: deb /Types: deb deb-src /' /etc/apt/sources.list.d/ubuntu.sources
+        sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
         sudo apt-get update
         ./bootstrap
         sudo apt-get build-dep vlc
