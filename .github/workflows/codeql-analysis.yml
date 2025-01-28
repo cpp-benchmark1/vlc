@@ -43,7 +43,7 @@ jobs:
         sudo apt-get update
         ./bootstrap
         sudo apt-get build-dep vlc
-        ./configure --prefix=$(pwd)
+        ./configure --prefix=$(pwd) --disable-xcb
         make
     - name: Free disk space
       run: |
