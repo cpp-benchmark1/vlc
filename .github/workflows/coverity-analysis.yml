@@ -43,9 +43,9 @@ jobs:
           sudo apt-get install git g++ make libtool automake autopoint pkg-config flex bison lua5.2 autotools-dev autoconf
           sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
           sudo apt-get update
-          ./bootstrap
+          bash ./bootstrap
           sudo apt-get build-dep vlc
-          ./configure --prefix=$(pwd) --disable-xcb --disable-qt
+          bash ./configure --prefix=$(pwd) --disable-xcb --disable-qt
           coverity_tool/bin/cov-build --dir cov-int make
       - name: Compress with bzip2
         run: |
